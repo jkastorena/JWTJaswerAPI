@@ -1,0 +1,91 @@
+// Copyright (C) 2024 Javier Castorena
+// 
+// This file is part of JWTJaswerAPI.
+// 
+// JWTJaswerAPI is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// JWTJaswerAPI is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with JWTJaswerAPI.  If not, see <https://www.gnu.org/licenses/>.
+
+using JWTJaswerAPI;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+namespace JWTJaswerAPI.Controllers;
+
+[Route("api/[controller]/{action}")]
+[ApiController]
+public class UserController : ControllerBase
+{
+
+    private APIContext _haswContext;
+
+    public UserController(APIContext haswContext)
+    {
+        _haswContext = haswContext;
+    }
+
+    // public async Task<IActionResult> GetUsers()
+    // {
+    //     var users = await _haswContext.Users.ToListAsync();
+    //     return Ok(users);
+    // }
+
+    // public async Task<IActionResult> Register(User user)
+    // {
+    //     if (user == null) return BadRequest("user empty");
+
+    //     _haswContext.Users.Add(user);
+    //     await _haswContext.SaveChangesAsync();
+
+    //     return Ok("The pinche user was created correctly");
+    // }
+
+    // [HttpPost]
+    // public async Task<IActionResult> CreateRole(Role role){
+    //      if (role == null) return BadRequest("Role empty");
+
+    //     _haswContext.Roles.Add(role);
+    //     await _haswContext.SaveChangesAsync();
+
+    //     return Ok("Role Created");
+    // }
+
+    // [HttpGet]
+    // public async Task<IActionResult> GetRoles()
+    // {
+    //     var roles = await _haswContext.Roles.ToListAsync();
+    //     return Ok(roles);
+    // }
+
+    // [HttpPost]
+    // public  IActionResult SetUserRole(UserRoleRequest req)
+    // {
+
+    //     if (req == null) return BadRequest("Fail");
+
+    //     var user = _haswContext.Users.FirstOrDefault(q => q.Email == req.Email);
+    //     var role = _haswContext.Roles.FirstOrDefault(q => q.RoleName == req.RoleName);
+
+    //     if(user == null || role == null) return BadRequest("No Hay");
+
+    //     var userRole = new UserRole(user.UserId, role.RoleId);
+
+    //     _haswContext.UsersRoles.AddAsync(userRole);
+    //     _haswContext.SaveChanges();
+        
+    //     return Ok(userRole);
+    // }
+
+
+   
+}
